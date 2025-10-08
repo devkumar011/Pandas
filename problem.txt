@@ -1,0 +1,12 @@
+1-coloums,rows.?
+1-what type od data
+3-missing data?
+
+info()
+method
+
+1- number of rows and columns
+2-column name
+3-int64 flot64 object
+4-non NULL counts
+5-memory usage of the data frame
