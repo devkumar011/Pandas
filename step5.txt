@@ -1,0 +1,9 @@
+1.select specific column
+2.filter rows.
+3 combine multiple condition
+
+
+1.Agar hame specific col.ko select krna he to
+SQURE BRACKETS ka use karna hoga
+2.ROWS ko filter krna he to 
+BOOLEAN CONDITIONS USE KARNA he  
