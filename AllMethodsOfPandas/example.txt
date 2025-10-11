@@ -1,0 +1,100 @@
+1. Data Creation Methods (Data Banana ya Load Karne ke Liye)
+Method	English Explanation	Hinglish Explanation
+pd.DataFrame()	Creates a DataFrame from dictionaries, lists, or arrays.	Ye ek 2D table jaisa data banata hai ? rows & columns ke form mein.
+pd.Series()	Creates a one-dimensional array (like a single column).	Single column ya ek list ke jaisa data structure banata hai.
+pd.read_csv('file.csv')	Reads data from a CSV file into a DataFrame.	CSV file ka data DataFrame mein load karta hai.
+pd.read_excel('file.xlsx')	Reads data from an Excel file.	Excel sheet ka data pandas mein import karta hai.
+pd.read_json('file.json')	Reads JSON file.	JSON format ka data load karta hai.
+pd.read_sql(query, connection)	Reads data from SQL database.	SQL query se directly data import karta hai.
+pd.concat([df1, df2])	Joins multiple DataFrames vertically or horizontally.	Do ya zyada DataFrames ko jodta hai (upar-neeche ya side-by-side).
+pd.merge(df1, df2)	Combines DataFrames using common columns (like SQL join).	Common column ke base par do DataFrames ko merge karta hai.
+?? 2. Viewing / Inspecting Data (Data Dekhne ke Liye)
+Method	English Explanation	Hinglish Explanation
+df.head()	Displays first 5 rows.	Pehle 5 rows dikhata hai.
+df.tail()	Displays last 5 rows.	Aakhri 5 rows dikhata hai.
+df.info()	Shows summary of DataFrame (types, non-null count).	DataFrame ka full summary deta hai.
+df.describe()	Gives statistical summary (mean, std, count, etc.).	Numeric columns ka quick analysis deta hai.
+df.shape	Returns (rows, columns).	Batata hai kitni rows aur columns hain.
+df.columns	Returns list of column names.	Column ke naam dikhata hai.
+df.dtypes	Shows data types of each column.	Har column ka data type dikhata hai.
+?? 3. Selecting & Indexing Data (Specific Data Chune ke Liye)
+Method	English Explanation	Hinglish Explanation
+df['col']	Select one column.	Ek column select karta hai.
+df[['col1','col2']]	Select multiple columns.	Multiple columns choose karta hai.
+df.loc[row_label, col_label]	Label-based selection.	Row aur column ke naam se access karta hai.
+df.iloc[row_index, col_index]	Index-based selection.	Row aur column ke index number se access karta hai.
+?? 4. Data Cleaning & Manipulation (Data Saaf Karne aur Modify Karne ke Liye)
+Method	English Explanation	Hinglish Explanation
+df.drop()	Remove rows or columns.	Row ya column delete karta hai.
+df.dropna()	Remove missing values.	NaN (empty) values hata deta hai.
+df.fillna(value)	Fill missing values.	Missing values ko replace karta hai.
+df.replace(old, new)	Replace specific values.	Khaas values ko badal deta hai.
+df.rename(columns={'old':'new'})	Rename columns.	Column ka naam change karta hai.
+df.duplicated()	Checks for duplicate rows.	Duplicate rows check karta hai.
+df.drop_duplicates()	Removes duplicate rows.	Duplicate rows hata deta hai.
+df.astype()	Convert datatype.	Data type badalta hai (e.g., float ? int).
+?? 5. Grouping & Aggregation (Data Summarize Karne ke Liye)
+Method	English Explanation	Hinglish Explanation
+df.groupby('col')	Groups data by column.	Kisi ek column ke basis par data group karta hai.
+df.mean()	Mean value.	Average nikalta hai.
+df.sum()	Sum of values.	Total sum karta hai.
+df.count()	Number of non-null values.	Count karta hai kitne non-null values hain.
+df.max()	Maximum value.	Sabse bada value.
+df.min()	Minimum value.	Sabse chhota value.
+df.value_counts()	Frequency count of unique values.	Har unique value kitni baar aayi hai ye batata hai.
+?? 6. Date & Time Handling (Date/Time Data Handle Karne ke Liye)
+Method	English Explanation	Hinglish Explanation
+pd.to_datetime()	Converts string to datetime object.	Date ko datetime format mein convert karta hai.
+df['date'].dt.year	Extracts year.	Year nikalta hai date se.
+df['date'].dt.month	Extracts month.	Month nikalta hai.
+df.resample('M').mean()	Resamples time series monthly.	Time-series data ko monthly average karta hai.
+?? 7. Combining DataFrames (DataFrames Ko Merge Karne ke Liye)
+Method	English Explanation	Hinglish Explanation
+pd.concat([df1, df2])	Combine vertically/horizontally.	DataFrames ko join karta hai.
+pd.merge(df1, df2, on='col')	Merge by common column.	Common column ke base par merge karta hai.
+df.join(df2)	Joins using index.	Index ke base par join karta hai.
+?? 8. Statistical Methods (Math aur Analysis ke Liye)
+Method	English Explanation	Hinglish Explanation
+df.mean()	Mean of columns.	Average value nikalta hai.
+df.std()	Standard deviation.	Spread of data batata hai.
+df.corr()	Correlation between columns.	Columns ke relation batata hai.
+df.cumsum()	Cumulative sum.	Running total deta hai.
+?? 9. Input / Output Methods (File Save & Load Karne ke Liye)
+Method	English Explanation	Hinglish Explanation
+df.to_csv('data.csv')	Save DataFrame to CSV.	CSV file mein save karta hai.
+df.to_excel('data.xlsx')	Save to Excel.	Excel format mein likhta hai.
+df.to_json('data.json')	Save as JSON.	JSON format mein export karta hai.
+pd.read_csv('data.csv')	Load CSV.	CSV file ko read karta hai.
+?? 10. String Operations (Text Data ke Liye)
+Method	English Explanation	Hinglish Explanation
+df['col'].str.lower()	Converts to lowercase.	Sare text ko chhoti letters mein badalta hai.
+df['col'].str.upper()	Converts to uppercase.	Sare text ko capital letters mein karta hai.
+df['col'].str.strip()	Removes spaces.	Extra space hata deta hai.
+df['col'].str.contains('word')	Finds rows containing a substring.	Jisme given word hai wo rows dikhata hai.
+?? 11. Pivoting / Reshaping Data (Data Shape Badalne ke Liye)
+Method	English Explanation	Hinglish Explanation
+df.pivot()	Converts rows into columns.	Data ko reshape karta hai (rows ? columns).
+df.melt()	Converts columns into rows.	Columns ko rows mein badalta hai.
+df.transpose()	Swaps rows and columns.	Rows aur columns exchange karta hai.
+?? 12. Visualization (Data Graph Mein Dikhane ke Liye)
+Method	English Explanation	Hinglish Explanation
+df.plot()	Basic plot.	Simple line graph banata hai.
+df.plot.bar()	Bar chart.	Bar graph dikhata hai.
+df.plot.box()	Box plot.	Data spread dikhata hai.
+df.plot.scatter(x, y)	Scatter plot.	X vs Y data ka scatter plot.
+?? 13. Utility Functions (Helpful Chhoti Cheezein)
+Method	English Explanation	Hinglish Explanation
+df.isna()	Checks for NaN values.	Missing data check karta hai.
+df.notna()	Checks non-missing values.	Non-missing values check karta hai.
+df.copy()	Makes a copy.	DataFrame ka duplicate banata hai.
+df.empty	Checks if empty.	DataFrame khaali hai ya nahi.
+df.equals(df2)	Compares two DataFrames.	Dono DataFrames same hain ya nahi ye check karta hai.
+? 14. Window Functions (Rolling/Moving Calculations)
+Method	English Explanation	Hinglish Explanation
+df.rolling(window=3).mean()	Rolling average of last 3 rows.	Pichhli 3 rows ka moving average nikalta hai.
+df.expanding().sum()	Expanding cumulative sum.	Total sum continuously badhata hai.
+?? 15. Categorical Data (Categories Handle Karne ke Liye)
+Method	English Explanation	Hinglish Explanation
+df.astype('category')	Converts column to category type.	Column ko category datatype mein badalta hai.
+df['col'].cat.categories	Shows all categories.	Sare category labels dikhata hai.
+df['col'].cat.codes	Shows category codes.	Har category ka numeric code deta hai.

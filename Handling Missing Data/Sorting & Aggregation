@@ -1,0 +1,18 @@
+#sorting data
+#SORTING DATA 1 COLUMN sort_values()
+#df.sort_values(by="Column Name", True/False, inplace = True)
+#f.sort_bablues(by="")
+
+import pandas as pd
+
+data={
+
+  "Name":['Arun','Dev','Malviya'],
+  "Age":[10,20,15],
+  "Salary":[10000,20000,30000]    
+}
+
+df =pd.DataFrame(data)
+df.ssort_values(by=Age, ascending=False,  inplace=True)
+print('Sorted Age by Descending')
+print(df)
